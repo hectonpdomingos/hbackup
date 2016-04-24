@@ -1,0 +1,46 @@
+#!/bin/bash
+#Script criado por Hecton P.Domingos
+#
+touch /tmp/backup.txt
+touch /tmp/redes.txt
+touch /tmp/nome.txt
+ while : ; do
+  
+      
+      resposta=$(
+        dialog --stdout               \
+               --title 'Suport'  \
+               --menu 'Script Suport criado por Hecton P.Domingos' \
+              0 0 0                   \
+              1 'Backup' \
+              2 'Redes'  \
+              3 'Backup MBR'     \
+              4 'Recuperar partição'        \
+              5 'Clonar HD com dd' \
+              6 'Ghost Mac'  \
+              7 ''     \
+              8 ''        \
+              0 'Sair'      )
+  
+      # Apertou CANCELAR ou ESC, então vamos sair...
+      [ $? -ne 0 ] && break
+  
+      # De acordo com a opção escolhida, dispara programas
+      case "$resposta" in
+
+           1) dialog                              \
+              --title 'Escolha o diretório do backup'  \
+             --fselect /home/$user       \
+             0 0 >/tmp/backup.txt 
+             dir=$( cat /tmp/backup.txt ) 
+             data=$(date +%d-%m-%Y)
+             tar -cvzf Backup-$data.tar.gz $dir ;;
+           
+	   2)
+           3) /usr/games/solitaire ;;
+           4) /usr/X11R6/bin/xsnow ; /usr/X11R6/bin/xeyes ;;
+           0) break ;;
+      esac
+  
+  done
+   
