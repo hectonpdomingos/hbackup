@@ -16,7 +16,7 @@ Foi desenvolvido no Debian e utilizava o dialog para gerar as telas do console, 
              11 'compartilhar conexão' \
              
              
-OBS: Todos arquivos que foram desenvolvidos estão aqui, muitos estão descomendatos e não há documentação. 
+OBS: Todos arquivos que foram desenvolvidos estão aqui, muitos estão descomentados e não há documentação. 
 Use apenas para fim de estudos ou curiosidade.
              
 
